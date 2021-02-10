@@ -6,21 +6,21 @@ pipeline {
             steps {
                 echo 'complie source code'
 		withMaven(maven: 'MAVEN3.6.3'){
-		sh 'mvn clean install'
+		sh 'maven clean install'
 		}
             }
         }
         stage('Test') {
             steps {
                withMaven(maven: 'MAVEN3.6.3'){
-		sh 'mvn test' 
+		sh 'maven test' 
             }
         }
     }
         stage('Deploy') {
             steps {
                 withMaven(maven: 'MAVEN3.6.3'){
-                sh 'mvn deploy'
+                sh 'maven deploy'
             }
         }
     }
