@@ -16,6 +16,7 @@ pipeline {
 		sh 'mvn test' 
             }
         }
+    }
         stage('Deploy') {
             steps {
                 withMaven(maven: 'MAVEN3.6.3'){
@@ -23,4 +24,5 @@ pipeline {
             }
         }
     }
+}
 }
